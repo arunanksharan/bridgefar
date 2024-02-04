@@ -1,5 +1,5 @@
 const ethers = require('ethers');
-import { FrameRequest, getFrameAccountAddress } from '@coinbase/onchainkit';
+import { FrameRequest } from '@coinbase/onchainkit';
 import { NextResponse } from 'next/server';
 
 const API_KEY = '72a5b4b0-e727-48be-8aa1-5da9d62fe635'; // SOCKET PUBLIC API KEY
@@ -87,9 +87,9 @@ export async function POST(req, res) {
   // Fetch connected user address with farcaster id
 
   // fid;
-  const userAddressFC = await getFrameAccountAddress(bodyTrusted, {
-    NEYNAR_API_KEY: 'NEYNAR_API_DOCS',
-  });
+  // const userAddressFC = await getFrameAccountAddress(bodyTrusted, {
+  //   NEYNAR_API_KEY: 'NEYNAR_API_DOCS',
+  // });
 
   // extract param values from inputText
   const params = inputText.split(' ');
@@ -102,7 +102,7 @@ export async function POST(req, res) {
     toChainIdBase,
     toTokenAddressBase,
     0.1,
-    userAddressFC,
+    '0x87EA6EB66E0965af650FB0B709d3Dee5Dfbd4c09',
     true,
     'output',
     true
